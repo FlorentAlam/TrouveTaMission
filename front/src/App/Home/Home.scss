@@ -1,0 +1,15 @@
+.home{
+    &__hero{
+        width: 100%;
+        height: calc(100vh - 100px);
+        margin-bottom: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &__last-offers{
+        padding: 30px 0;
+        box-sizing: border-box;
+        height: 100vh;
+    }
+}

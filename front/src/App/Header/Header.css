@@ -1,0 +1,7 @@
+header .navigation--desktop{ display: none; }
+header .navigation-mobile{ display: flex; }
+
+@media screen and (min-width: 737px){
+    header .navigation--desktop{ display: flex; }
+    header .navigation-mobile{ display: none; }
+}

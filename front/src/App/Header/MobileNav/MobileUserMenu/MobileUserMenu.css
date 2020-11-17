@@ -1,0 +1,44 @@
+.menu-user-mobile{
+    background: white;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    transition-duration: .2s;
+    animation-timing-function: ease-out;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.menu-user-mobile h1{
+    width: 80%;
+    text-align: center;
+    font-size: 1.6rem;
+}
+
+.menu-user-mobile button{
+    width: 180px;
+    height: 40px;
+    border: none;
+    font-weight: bold;
+}
+
+.menu-user-mobile a:nth-child(2) button{
+    margin-bottom: 10px;
+    background: #ffcd19;
+}
+.menu-user-mobile a:nth-child(3) button{
+    background: black;
+    color: white;
+}
+
+.menu-user-mobile--open{
+    transform: translateX(0);
+}
+.menu-user-mobile--close{
+    transform: translateX(100vw);
+}

@@ -1,0 +1,17 @@
+.menu-mobile{
+    background: red;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    transition-duration: .2s;
+    animation-timing-function: ease-out;
+}
+
+.menu-mobile--open{
+    transform: translateX(0);
+}
+.menu-mobile--close{
+    transform: translateX(-100vw);
+}

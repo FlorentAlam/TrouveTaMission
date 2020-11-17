@@ -1,0 +1,17 @@
+.search-page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__form{
+        label{
+            height: 1px;
+            width: 1px;
+            overflow: hidden;
+            position: absolute;
+        }
+    }
+}
+.border{
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, .1);
+}

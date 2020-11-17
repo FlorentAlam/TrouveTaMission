@@ -1,0 +1,31 @@
+.last-offers{
+    table{
+        width: 100%;
+        thead{
+            tr{
+                th{
+                    padding: 15px;
+                    color: rgba(0, 0, 0, .6);
+                    letter-spacing: 1.2px;
+                    &:first-child{
+                        border-radius: 5px 0 0 5px;
+                    }
+                    &:last-child{
+                        border-radius: 0 5px 5px 0;
+                    }
+                }
+            }
+        }
+        tbody{
+            text-align: center;
+            box-shadow: 0 0 8px rgba(0, 0, 0, .1);
+            tr{
+                
+                td{
+                    padding: 15px;
+                    border-bottom: 1px solid rgba(0, 0, 0, .05);
+                }
+            }
+        }
+    }
+}
