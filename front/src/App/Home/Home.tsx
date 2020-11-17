@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import SearchInput from '../SearchInput';
 import './Home.scss';
 import JobList from './JobList/JobList';
+import NewsLetter from './NewsLetter/NewsLetter';
 
 const Home = () => {
     const history = useHistory();
@@ -16,6 +17,7 @@ const Home = () => {
         <div className="home__hero bg-secondary">
             <SearchInput onSearch={onSubmit}/>
         </div>
+        <NewsLetter/>
         <JobList/>
     </div>
 )};

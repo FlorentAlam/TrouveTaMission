@@ -9,6 +9,7 @@ import Compte from './Compte/Compte';
 import { getUser } from '../utils/firebase';
 import Home from './Home/Home';
 import SearchPage from './SearchPage/SearchPage';
+import Footer from './Footer/Footer';
 
 type AppRouterProps = {
     logUser: (user: firebase.User) => {},
@@ -55,6 +56,7 @@ const AppRouter: FunctionComponent<AppRouterProps> = ({logUser, user}) => {
                         <Route path="/connexion" component={() => <ConnexionInscription type="connexion"/>}/>
                         <Route path="/inscription" component={() => <ConnexionInscription type="inscription"/>}/>
                     </Switch>
+                    <Footer/>
                 </Router>
             )
         }

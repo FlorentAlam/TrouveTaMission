@@ -3,7 +3,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import store from '../../state/store';
-import ConnexionInscription from './ConnexionInscription';
+import ConnexionInscription from './ConnexionInscription'; 
 
 
 describe('connexion/inscription page', () => {

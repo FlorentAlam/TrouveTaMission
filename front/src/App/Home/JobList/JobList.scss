@@ -1,10 +1,22 @@
 .last-offers{
+    min-height: 100vh;
+    &__filters{
+        display: flex;
+        justify-content: flex-end;
+        label{
+            margin-left: 40px;
+            font-weight: bold;
+            opacity: .7;
+        }
+    }
     table{
+        margin-top: 20px;
         width: 100%;
+        box-shadow: 0 0 8px 5px rgba(0, 0, 0, .03);
         thead{
             tr{
                 th{
-                    padding: 15px;
+                    padding: 20px 0;
                     color: rgba(0, 0, 0, .6);
                     letter-spacing: 1.2px;
                     &:first-child{
@@ -18,12 +30,41 @@
         }
         tbody{
             text-align: center;
-            box-shadow: 0 0 8px rgba(0, 0, 0, .1);
             tr{
-                
+                box-shadow: 0 0 8px 5px rgba(0, 0, 0, 0);
+                transition-duration: .2s;
+                &:hover{
+                    box-shadow: 0 0 12px 5px rgba(0, 0, 0, 0.1);
+                }
                 td{
-                    padding: 15px;
+                    padding: 20px 0;
                     border-bottom: 1px solid rgba(0, 0, 0, .05);
+                }
+            }
+            .job-item{
+                font-size: .9rem;
+                &__compagny{
+                    font-weight: 900;
+                    opacity: .8;
+                }
+                &__ville, &__salaire, &__date, &__poste{
+                    opacity: .7;
+                }
+                &__postuler{
+                    background: none;
+                    border: none;
+                    border-radius: 25px;
+                    border: 2px solid #241973;
+                    color:  #241973;
+                    font-weight: bold;
+                    padding: 8px 12px;
+                    transition-duration: .2s;
+                    transition-timing-function: ease-out;
+                    &:hover{
+                        background: #f42917;
+                        color: white;
+                        border-color:  #f42917;
+                    }
                 }
             }
         }
