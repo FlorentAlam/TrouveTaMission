@@ -31,10 +31,10 @@ const JobList = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    <JobItem/>
-                    <JobItem/>
-                    <JobItem/>
-                    <JobItem/>
+                    <JobItem id="1"/>
+                    <JobItem id="2"/>
+                    <JobItem id="3"/>
+                    <JobItem id="4"/>
                 </tbody>
             </table>
         </div>

@@ -10,6 +10,7 @@ import { getUser } from '../utils/firebase';
 import Home from './Home/Home';
 import SearchPage from './SearchPage/SearchPage';
 import Footer from './Footer/Footer';
+import AnnonceCreationPage from './AnnonceCreationPage/AnnonceCreatePage';
 
 type AppRouterProps = {
     logUser: (user: firebase.User) => {},
@@ -46,8 +47,7 @@ const AppRouter: FunctionComponent<AppRouterProps> = ({logUser, user}) => {
                         <Route path="/" exact component={Home}/>
                         <Route path="/recherche" exact component={SearchPage}/>
                         <Route path="/recherche/:intitule/:ville" component={SearchPage}/>
-                        <Route path="/salaires" component={() => <div></div>}/>
-                        <Route path="/entreprises" component={() => <div></div>}/>
+                        <Route path="/poster-une-annonce" component={AnnonceCreationPage}/>
                         <Route path="/messages" exact component={() => <div></div>}/>
                         <Route path="/compte" component={() => <Compte/>}/>
                         <Route path="/mes-emplois" exact component={() => <div></div>}/>

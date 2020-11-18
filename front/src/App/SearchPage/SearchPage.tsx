@@ -1,10 +1,19 @@
 import React, { useEffect, useState } from 'react';
-import { FiSearch } from 'react-icons/fi';
-import { GrLocation } from 'react-icons/gr';
+import Loading from '../Loading';
 import SearchInput from '../SearchInput';
+import Annonces from './Annonces/Annonces';
 import './SearchPage.scss';
 
+interface IJobData{
+    intitule: string,
+    entreprise: string,
+}
+
 const SearchPage = (props:any) => {
+
+    const [searchResult, setSearchResult] = useState<IJobData[] | []>([]);
+    const [loading, setLoading] = useState(false);
+
     useEffect(() => {
         if(props.match.params.intitule){
             getResults();
@@ -12,11 +21,24 @@ const SearchPage = (props:any) => {
     }, []);
 
     const onSubmit = (intitule: string, ville: string) => {
-        getResults();
+        setLoading(true);
+        // getResults();
     }
 
     const getResults = () => {
-
+        setSearchResult(
+            [{
+                entreprise: "test",
+                intitule: "test"
+            }, {
+                entreprise: "test",
+                intitule: "test"
+            }, {
+                entreprise: "test",
+                intitule: "test"
+            }]
+        );
+        setLoading(false);
     }
 
     return (
@@ -24,7 +46,8 @@ const SearchPage = (props:any) => {
             <div className='border'>
                 <SearchInput initialIntitule={props.match.params.intitule || ''} initialVille={props.match.params.ville || ''} onSearch={onSubmit}/>
             </div>
-            
+            { loading && <Loading/>}
+            { !loading && searchResult.length > 0 && <Annonces/>}
         </div>
     )
 };
