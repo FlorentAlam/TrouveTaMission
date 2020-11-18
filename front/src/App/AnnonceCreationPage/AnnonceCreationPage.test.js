@@ -3,6 +3,7 @@ import { type } from 'os';
 import React from 'react';
 import AnnonceCreationPage from './AnnonceCreatePage';
 
+
 describe('AnnonceCreationPage', () => {
     it('should properly render component', () => {
         const { getByText, getByLabelText } = render(<AnnonceCreationPage/>);
