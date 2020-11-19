@@ -4,15 +4,15 @@ import { Slate, Editable, withReact } from 'slate-react';
 import 'froala-editor/css/froala_style.min.css';
 import 'froala-editor/css/froala_editor.pkgd.min.css';
 import FroalaEditorComponent from 'react-froala-wysiwyg';
+import { IFormData } from '../IFormData';
 
 interface IContenuAnnonce{
-    sliderNumber: number
+    sliderNumber: number,
+    values: IFormData,
+    onUpdate: (data: IFormData) => void
 }
 
-const ContenuAnnonce: FunctionComponent<IContenuAnnonce> = ({sliderNumber}) => {
-
-    const [model, setModel] = useState<any>("");
-
+const ContenuAnnonce: FunctionComponent<IContenuAnnonce> = ({sliderNumber, values, onUpdate}) => {
     const config = {
         placeholderText: 'Entrez votre texte'
     }
@@ -24,8 +24,8 @@ const ContenuAnnonce: FunctionComponent<IContenuAnnonce> = ({sliderNumber}) => {
                 <FroalaEditorComponent
                     tag="textarea"
                     config={config}
-                    model={model}
-                    onModelChange={setModel}
+                    model={values.annonceContent}
+                    onModelChange={(value:string) => onUpdate({...values, annonceContent: value})}
                 />
             </div>
         </div>
