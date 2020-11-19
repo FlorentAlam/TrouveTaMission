@@ -1,14 +1,12 @@
-import React, { FunctionComponent, useEffect } from 'react';
+import React, { FunctionComponent } from 'react';
 import Connexion from './Connexion/Connexion';
 import Inscription from './Inscription/Inscription';
 import './ConnexionInscription.scss';
 import {IUserState} from '../../state/user/userInterface';
-import { connect } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 
 type ConnexionInscriptionProps = {
-    type: 'connexion' | 'inscription',
-    user: IUserState
+    type: 'connexion' | 'inscription'
 }
 
 type PagesType = {
@@ -37,14 +35,7 @@ const FOOTER: FooterType = {
     }
 }
 
-const ConnexionInscription : FunctionComponent<ConnexionInscriptionProps> = ({type, user}) => {
-
-    useEffect(() => {
-        if(user.logged){
-            redirect();
-        }
-    }, []);// eslint-disable-line react-hooks/exhaustive-deps
-
+const ConnexionInscription : FunctionComponent<ConnexionInscriptionProps> = ({type}) => {
     const history = useHistory();
 
     const redirect = () => {
@@ -66,8 +57,4 @@ const ConnexionInscription : FunctionComponent<ConnexionInscriptionProps> = ({ty
     )
 };
 
-const mapStateToProps = (state: any) => ({
-    user: state.user
-});
-
-export default connect(mapStateToProps)(ConnexionInscription);
+export default ConnexionInscription;

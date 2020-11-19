@@ -1,4 +1,3 @@
-import firebase from "firebase/app";
 import USER_CONSTANTES from "./constantes"
 
 export const signInUser = (user: any) => ({

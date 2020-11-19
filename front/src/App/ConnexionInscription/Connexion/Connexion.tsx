@@ -1,7 +1,5 @@
 import React, { FunctionComponent, useState } from 'react';
 import { ERRORS } from '../../../utils/constantes';
-import { logUser } from '../../../utils/firebase';
-import { checkLength } from '../../../utils/formValidation';
 
 const Connexion: FunctionComponent = () => {
     
@@ -11,8 +9,6 @@ const Connexion: FunctionComponent = () => {
 
     const validateData = () => {
         try{
-            if(!checkLength(password, 7)) throw new Error(ERRORS.PASSWORD_LENGTH);
-            if(!checkLength(email, 1)) throw new Error(ERRORS.EMAIL_FORMAT);
             return true;
         } catch(error){
             setError({error: true, message: error.message});
@@ -22,8 +18,6 @@ const Connexion: FunctionComponent = () => {
 
     const onSubmit = async (e:React.MouseEvent) => {
         e.preventDefault();
-
-        if(validateData()){ setError(await logUser(email, password)); }
     }
 
     return(

@@ -1,7 +1,5 @@
 import React, { FunctionComponent, useState } from 'react';
 import { ERRORS } from '../../../utils/constantes';
-import { createUser } from '../../../utils/firebase';
-import { checkLength } from '../../../utils/formValidation';
 
 const Inscription: FunctionComponent = () => {
     
@@ -12,8 +10,6 @@ const Inscription: FunctionComponent = () => {
 
     const validateData = () => {
         try{
-            if(!checkLength(password, 7)) throw new Error(ERRORS.PASSWORD_LENGTH);
-            if(!checkLength(email, 1)) throw new Error(ERRORS.EMAIL_FORMAT);
             if(password !== passwordRepeat) throw new Error(ERRORS.DIFFERENT_PASSWORDS);
             return true;
         } catch(error){
@@ -24,8 +20,6 @@ const Inscription: FunctionComponent = () => {
 
     const onSubmit = async (e:React.MouseEvent) => {
         e.preventDefault();
-
-        if(validateData()){ setError(await createUser(email, password)); }
     }
 
     return(

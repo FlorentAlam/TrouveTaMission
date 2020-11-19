@@ -1,12 +1,9 @@
-import React, { FunctionComponent, useEffect, useState } from 'react';
+import React, { FunctionComponent, useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import ConnexionInscription from './ConnexionInscription/ConnexionInscription';
 import Header from './Header/Header';
 import firebase from 'firebase/app';
-import { connect } from 'react-redux';
-import { signInUser } from '../state/user/userActions';
 import Compte from './Compte/Compte';
-import { getUser } from '../utils/firebase';
 import Home from './Home/Home';
 import SearchPage from './SearchPage/SearchPage';
 import Footer from './Footer/Footer';
@@ -20,19 +17,6 @@ type AppRouterProps = {
 const AppRouter: FunctionComponent<AppRouterProps> = ({logUser, user}) => {
 
     const [isAppInitialized, setInitialized] = useState(false);
-
-    useEffect(() => {
-        firebase.auth().onAuthStateChanged(function(user) {
-            setInitialized(true);
-            if (user) {
-                log(user);
-            }
-        });
-    }, []);// eslint-disable-line react-hooks/exhaustive-deps
-
-    const log = async(user:any) => {
-        logUser(await(getUser(user)));
-    };
 
     return (
         <>
@@ -64,14 +48,4 @@ const AppRouter: FunctionComponent<AppRouterProps> = ({logUser, user}) => {
     
 )};
 
-const mapDispatchToProps = (dispatch:any) => {
-    return {
-        logUser: (user:any) => dispatch(signInUser(user))
-    }
-}
-
-const mapStateToProps = (state: any) => ({
-    user: state.user
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(AppRouter);
+export default AppRouter;
