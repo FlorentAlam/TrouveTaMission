@@ -2,7 +2,6 @@ import React, { FunctionComponent, useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import ConnexionInscription from './ConnexionInscription/ConnexionInscription';
 import Header from './Header/Header';
-import firebase from 'firebase/app';
 import Compte from './Compte/Compte';
 import Home from './Home/Home';
 import SearchPage from './SearchPage/SearchPage';

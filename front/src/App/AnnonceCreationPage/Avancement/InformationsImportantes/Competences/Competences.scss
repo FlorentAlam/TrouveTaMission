@@ -4,15 +4,14 @@
         font-size: .8rem;
     }
     &__warning-popup{
-        position: absolute;
         border: 2px solid red;
-        background: white;
         width: 100%;
         text-align: center;
-        padding: 15px;
+        padding: 10px;
+        font-size: .8rem;
         box-sizing: border-box;
         border-radius: 5px;
-        top: -70px;
+        margin: 10px 0;
     }
     &__container{
         position: relative;
@@ -23,8 +22,8 @@
         box-sizing: border-box;
         display: flex;
         align-items: flex-start;
-        justify-content: flex-start;
         flex-wrap: wrap;
+        align-content: flex-start;
     }
     &__input{
         display: flex;
@@ -45,9 +44,15 @@
     &__unit{
         background: white;
         margin: 5px;
-        padding: 6px 15px;
+        padding: 6px 10px;
         border-radius: 5px;
         box-shadow: 0 0 6px rgba(0, 0, 0, .2);
         cursor: pointer;
+        display: flex;
+        align-items: center;
+        &__close{
+            margin-left: 10px;
+            font-size: 1.2rem;
+        }
     }
 }

@@ -12,7 +12,7 @@ const InformationsImportantes: FunctionComponent<IInformationsImportantes> = ({s
 
 
     return (
-        <div className="avancement__slider" style={{transform: `translateX(${-100 * sliderNumber}vw)`}}>
+        <div className="avancement__slider" style={{transform: `translateX(${(-window.innerWidth + 75) * sliderNumber}px)`}}>
             <form>
                 <label htmlFor="intitule">Intitulé <span className="annonce-create__requis col-primary">requis</span></label>
                 <input required type="text" name="intitule" id="intitule" value={intitule} onChange={e => setIntitule(e.target.value)}/>

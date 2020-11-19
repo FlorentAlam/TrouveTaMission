@@ -4,6 +4,7 @@
         height: 5px;
         width: 100%;
         border-radius: 15px;
+        margin: 10px 0;
     }
     &__inner{
         height: 100%;
@@ -25,7 +26,21 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        transition-duration: .3s;
+        transition-duration: .4s;
         transition-timing-function: ease-in-out;
+    }
+    &__buttons{
+        button{
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: none;
+            margin: 5px 15px;
+            color: white;
+            cursor: pointer;
+            &:disabled{
+                opacity: .3;
+                cursor: default;
+            }
+        }
     }
 }

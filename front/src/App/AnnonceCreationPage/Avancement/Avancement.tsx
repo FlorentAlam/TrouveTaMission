@@ -15,8 +15,10 @@ const Avancement = () => {
                 <InformationsImportantes sliderNumber={sliderNumber}/>
                 <ContenuAnnonce sliderNumber={sliderNumber}/>
             </div>
-            <button disabled={sliderNumber === 0 ? true : false} onClick={() => setSliderNumber(sliderNumber - 1)}>Précédent</button>
-            <button disabled={sliderNumber === 3 ? true : false} onClick={() => setSliderNumber(sliderNumber + 1)}>Suivant</button>
+            <div className="avancement__buttons">
+                <button className="bg-primary" disabled={sliderNumber === 0 ? true : false} onClick={() => setSliderNumber(sliderNumber - 1)}>Précédent</button>
+                <button className="bg-primary" disabled={sliderNumber === 3 ? true : false} onClick={() => setSliderNumber(sliderNumber + 1)}>Suivant</button>
+            </div>
         </>
     )
 }
