@@ -11,15 +11,17 @@ const Avancement = () => {
     });
 
     return(
-        <div>
+        <>
             <div className="avancement__outer">
-                <div className="avancement__inner" style={{transform: `scaleX(${sliderNumber / 3})`}}></div>
+                <div className="avancement__inner bg-primary" style={{transform: `scaleX(${sliderNumber / 3})`}}></div>
             </div>
-            <InformationsImportantes/>
-            <ContenuAnnonce/>
+            <div className="avancement__sliders__container">
+                <InformationsImportantes sliderNumber={sliderNumber}/>
+                <ContenuAnnonce sliderNumber={sliderNumber}/>
+            </div>
             <button disabled={sliderNumber === 0 ? true : false} onClick={() => setSliderNumber(sliderNumber - 1)}>Précédent</button>
             <button disabled={sliderNumber === 3 ? true : false} onClick={() => setSliderNumber(sliderNumber + 1)}>Suivant</button>
-        </div>
+        </>
     )
 }
 

@@ -9,14 +9,9 @@ import SearchPage from './SearchPage/SearchPage';
 import Footer from './Footer/Footer';
 import AnnonceCreationPage from './AnnonceCreationPage/AnnonceCreatePage';
 
-type AppRouterProps = {
-    logUser: (user: firebase.User) => {},
-    user: any
-}
+const AppRouter = () => {
 
-const AppRouter: FunctionComponent<AppRouterProps> = ({logUser, user}) => {
-
-    const [isAppInitialized, setInitialized] = useState(false);
+    const [isAppInitialized, setInitialized] = useState(true);
 
     return (
         <>
