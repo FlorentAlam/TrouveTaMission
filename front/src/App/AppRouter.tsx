@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState } from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import ConnexionInscription from './ConnexionInscription/ConnexionInscription';
 import Header from './Header/Header';

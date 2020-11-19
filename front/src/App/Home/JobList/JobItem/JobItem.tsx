@@ -1,5 +1,4 @@
 import React, { FunctionComponent } from 'react';
-import { Link, useHistory } from 'react-router-dom';
 
 interface IJobItem{
     id: string

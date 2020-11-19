@@ -8,10 +8,6 @@ type MobileUserMenuProps = {
 }
 
 const MobileUserMenu : FunctionComponent<MobileUserMenuProps> = ({isMenuOpen, toggleMenu}) => {
-    const disconnect = () => {
-        toggleMenu();
-    }
-
     return (
         <div className={"menu-user-mobile" + (isMenuOpen ? " menu-user-mobile--open" : " menu-user-mobile--close")}>
             <h1>Connectez vous pour accéder à toutes nos fonctionnalités</h1>

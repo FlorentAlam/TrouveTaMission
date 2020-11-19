@@ -20,6 +20,7 @@ const Inscription: FunctionComponent = () => {
 
     const onSubmit = async (e:React.MouseEvent) => {
         e.preventDefault();
+        if(validateData()) console.log('ok');
     }
 
     return(

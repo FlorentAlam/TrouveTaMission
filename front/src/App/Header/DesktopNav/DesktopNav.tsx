@@ -4,10 +4,6 @@ import { FiLogIn } from 'react-icons/fi';
 import './DesktopNav.scss';
 
 const DesktopNav = () => {
-    
-    const disconnect = () => {
-    }
-
     return (
     <nav className="navigation--desktop">
         <Link to="/"><h1>Trouve Ta Mission</h1></Link>

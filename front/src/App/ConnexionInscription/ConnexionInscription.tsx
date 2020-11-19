@@ -2,7 +2,6 @@ import React, { FunctionComponent } from 'react';
 import Connexion from './Connexion/Connexion';
 import Inscription from './Inscription/Inscription';
 import './ConnexionInscription.scss';
-import {IUserState} from '../../state/user/userInterface';
 import { Link, useHistory } from 'react-router-dom';
 
 type ConnexionInscriptionProps = {
@@ -36,11 +35,11 @@ const FOOTER: FooterType = {
 }
 
 const ConnexionInscription : FunctionComponent<ConnexionInscriptionProps> = ({type}) => {
-    const history = useHistory();
+    // const history = useHistory();
 
-    const redirect = () => {
-        history.push('/');
-    }
+    // const redirect = () => {
+    //     history.push('/');
+    // }
 
     return(
         <div className="connexion-inscription">
