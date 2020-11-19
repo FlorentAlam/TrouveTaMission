@@ -1,9 +1,30 @@
 .competences{
+    &__detail{
+        margin: 10px 0;
+        font-size: .8rem;
+    }
+    &__warning-popup{
+        position: absolute;
+        border: 2px solid red;
+        background: white;
+        width: 100%;
+        text-align: center;
+        padding: 15px;
+        box-sizing: border-box;
+        border-radius: 5px;
+        top: -70px;
+    }
     &__container{
-        height: 150px;
+        position: relative;
+        height: 200px;
         margin: 10px 0;
         border-radius: 8px;
         border: 1px solid rgba(0, 0, 0, .1);
+        box-sizing: border-box;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-wrap: wrap;
     }
     &__input{
         display: flex;
@@ -20,5 +41,13 @@
             border-radius: 8px;
             color: white;
         }
+    }
+    &__unit{
+        background: white;
+        margin: 5px;
+        padding: 6px 15px;
+        border-radius: 5px;
+        box-shadow: 0 0 6px rgba(0, 0, 0, .2);
+        cursor: pointer;
     }
 }

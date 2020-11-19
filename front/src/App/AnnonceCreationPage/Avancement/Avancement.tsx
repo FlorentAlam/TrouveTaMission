@@ -5,11 +5,7 @@ import './Avancement.scss';
 
 const Avancement = () => {
     const [sliderNumber, setSliderNumber] = useState(0);    
-
-    useEffect(() => {
-        console.log(sliderNumber / 4);
-    });
-
+    
     return(
         <>
             <div className="avancement__outer">
