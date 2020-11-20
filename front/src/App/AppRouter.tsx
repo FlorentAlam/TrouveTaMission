@@ -7,6 +7,7 @@ import Home from './Home/Home';
 import SearchPage from './SearchPage/SearchPage';
 import Footer from './Footer/Footer';
 import AnnonceCreationPage from './AnnonceCreationPage/AnnonceCreatePage';
+import Messages from './Messages/Messages';
 
 const AppRouter = () => {
 
@@ -26,7 +27,7 @@ const AppRouter = () => {
                         <Route path="/recherche" exact component={SearchPage}/>
                         <Route path="/recherche/:intitule/:ville" component={SearchPage}/>
                         <Route path="/poster-une-annonce" component={AnnonceCreationPage}/>
-                        <Route path="/messages" exact component={() => <div></div>}/>
+                        <Route path="/messages" component={Messages}/>
                         <Route path="/compte" component={() => <Compte/>}/>
                         <Route path="/mes-emplois" exact component={() => <div></div>}/>
                         <Route path="/preferences" exact component={() => <div></div>}/>

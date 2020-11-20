@@ -5,13 +5,34 @@ import './Avancement.scss';
 import { IFormData } from './IFormData';
 import InformationsFacultatives from './InformationsFacultatives/InformationsFacultatives';
 import Slider from './Slider';
+import Resume from './Resume/Resume';
+import { GrReturn } from 'react-icons/gr';
 
 const Avancement = () => {
     const [sliderNumber, setSliderNumber] = useState(0);  
     
-    const [formData, setFormData] = useState<IFormData>({intitule: '', type: '', annonceContent: ''});
+    const [formData, setFormData] = useState<IFormData>({intitule: '', annonceContent: '', ville: '', entreprise: ''});
 
-    const sliders = [InformationsImportantes, ContenuAnnonce, InformationsFacultatives];
+    const sliders = [InformationsImportantes, ContenuAnnonce, InformationsFacultatives, Resume];
+
+    const onChangeSlider = (direction: "minus" | "plus") => {
+
+        switch(sliderNumber){
+            case 0: {
+                if(formData.intitule === '' || formData.ville === '' || formData.entreprise === '') return;
+                break;
+            }
+            case 1: {
+                if(formData.annonceContent === '') return;
+                break;
+            }
+            default: {
+                break;
+            }
+        }
+
+        setSliderNumber(sliderNumber + (direction === "minus" ? -1 : +1));
+    }
 
     return(
         <>
@@ -22,8 +43,8 @@ const Avancement = () => {
                 { sliders.map((Slide, id) => <Slider key={id} sliderNumber={sliderNumber}><Slide values={formData} onUpdate={(data:IFormData) => setFormData(data)}/></Slider>)}
             </div>
             <div className="avancement__buttons">
-                <button className="bg-primary" disabled={sliderNumber === 0 ? true : false} onClick={() => setSliderNumber(sliderNumber - 1)}>Précédent</button>
-                <button className="bg-primary" disabled={sliderNumber === 3 ? true : false} onClick={() => setSliderNumber(sliderNumber + 1)}>Suivant</button>
+                <button className="bg-primary" disabled={sliderNumber === 0 ? true : false} onClick={() => onChangeSlider('minus')}>Précédent</button>
+                <button className="bg-primary" disabled={sliderNumber === 3 ? true : false} onClick={() => onChangeSlider('plus')}>Suivant</button>
             </div>
         </>
     )

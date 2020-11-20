@@ -1,0 +1,60 @@
+.messages{
+    display: flex;
+    height: calc(100vh - 70px);
+    overflow: hidden;
+    &__list{
+        width: 20%;
+        overflow-y: scroll;
+    }
+    &__content{
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    &__messages{
+        flex-grow: 1;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+    &__message-input{
+        display: flex;
+        padding: 5px;
+        box-sizing: border-box;
+        align-items: center;
+        textarea{
+            flex-grow: 1;
+            border-radius: 8px;
+            border: 1px solid rgba(0, 0, 0, .1);
+        }
+        button{
+            border: none;
+            height: 50px;
+            width: 50px;
+            color: white;
+            border-radius: 25px;
+            margin-left: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+    }
+    &__item{
+        height: 85px;
+        overflow: hidden;
+        margin: 5px 0;
+        padding: 10px 10px 10px 0;
+        box-sizing: border-box;
+        p{
+            width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-bottom: 0;
+            font-size: .9rem;
+        }
+        span{
+            font-weight: bold;
+        }
+    }
+}
